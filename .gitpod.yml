@@ -1,0 +1,19 @@
+tasks:
+  - name: Setup
+    init: |
+      docker-compose build
+      pip install -r requirements.txt
+    command: |
+      docker-compose up -d
+      sleep 30
+      bash create_connectors.sh
+
+ports:
+  - port: 3000
+    onOpen: ignore
+  - port: 5432
+    onOpen: ignore
+  - port: 8083
+    onOpen: ignore
+  - port: 9092
+    onOpen: ignore
