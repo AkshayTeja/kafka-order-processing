@@ -1,9 +1,9 @@
 # Dockerfile
-FROM node:14
+FROM node:16
 
 WORKDIR /app
 
-RUN npm install -g json-server
+RUN npm install -g json-server@0.17.0
 
 COPY db.json .
 
